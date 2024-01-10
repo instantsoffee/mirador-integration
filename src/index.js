@@ -1,5 +1,3 @@
-// Kopie von https://github.com/ProjectMirador/mirador/blob/master/src/config/settings.js
-
 import Mirador from 'mirador/dist/es/src/index'
 import { miradorImageToolsPlugin } from 'mirador-image-tools'
 import miradorDownloadPlugin from 'mirador-dl-plugin/es';
@@ -22,12 +20,57 @@ const config = {
   // workspace: {
   //   type: "elastic"
   // },
+  selectedTheme: 'onb', // Which theme to use.
   theme: {
     palette: {
       primary: {
-        main: '#000',
+        main: '#C8421C',
+      },
+      secondary: {
+        main: '#EA9A5A',
       },
     },
+  },
+  themes: {
+    light: {
+      palette: {
+        type: 'light',
+        primary: {
+          main: '#C8421C',
+        },
+      },
+    },
+    dark: {
+      palette: {
+        type: 'dark',
+        primary: {
+          main: '#C8421C',
+        },
+      },
+    },
+    onb: {
+      palette: {
+        type: 'light',
+        primary: {
+          main: '#C8421C',
+        },
+      },
+      typography:{
+        fontFamily: ['Inter', 'sans-serif'],
+        // fontSize: 16, // verändert die Größe der Icons
+        // htmlFontSize: 24, // verändert die Größe der Icons,
+        h4: {
+          fontSize: '2rem',
+          fontWeight: 700,
+        },
+        overline: {
+          fontFamily: ['Spectral', 'serif'],
+        },
+        body1: {
+          fontFamily: ['Spectral', 'serif'],
+        },
+      },
+    }
   },
   window: { //global window defaults
     allowClose: false, // Configure if windows can be closed or not
