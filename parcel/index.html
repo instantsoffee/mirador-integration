@@ -8,7 +8,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lemon&family=Spectral:wght@400;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div id="demo"></div>
+    <div id="viewer"></div>
     <script src="../src/index.js"></script>
+    <script>
+      const mirador = renderMirador({
+        id: "viewer",
+        windows: [
+          {
+            imageToolsEnabled: true,
+            imageToolsOpen: false,
+            manifestId: 'https://iiif.onb.ac.at/presentation/ABO/Z152225709/manifest'
+          }
+        ]
+      });
+      </script>
   </body>
 </html>

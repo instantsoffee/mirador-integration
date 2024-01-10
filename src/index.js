@@ -8,19 +8,20 @@ import CustomBrand from './components/custom_brand';
 
 
 const config = {
-  id: 'demo',
   language: 'de',
-  windows: [{
-    imageToolsEnabled: true,
-    imageToolsOpen: true,
-    manifestId: 'https://iiif.onb.ac.at/presentation/ABO/Z152225709/manifest',
-    // manifestId: 'https://iiif.onb.ac.at/presentation/AKON/AK076_113/manifest',
-    // manifestId: 'https://digital.library.villanova.edu/Item/vudl:24299/Manifest', // download plugin PDF
-  }],
+  // id and windows come from HTML options 
+  // id: 'demo',
+  // windows: [{
+  //   imageToolsEnabled: true,
+  //   imageToolsOpen: false,
+  //   manifestId: 'https://iiif.onb.ac.at/presentation/ABO/Z152225709/manifest',
+  //   manifestId: 'https://iiif.onb.ac.at/presentation/AKON/AK076_113/manifest',
+  //   manifestId: 'https://digital.library.villanova.edu/Item/vudl:24299/Manifest', // download plugin PDF
+  // }],
   // workspace: {
   //   type: "elastic"
   // },
-  selectedTheme: 'onb', // Which theme to use.
+  selectedTheme: 'onb', // Set default theme
   theme: {
     palette: {
       primary: {
@@ -58,7 +59,7 @@ const config = {
       typography:{
         fontFamily: ['Inter', 'sans-serif'],
         // fontSize: 16, // verändert die Größe der Icons
-        // htmlFontSize: 24, // verändert die Größe der Icons,
+        // htmlFontSize: 24, // verändert auch die Größe der Icons
         h4: {
           fontSize: '2rem',
           fontWeight: 700,
@@ -150,4 +151,17 @@ const plugins = [
   ...miradorDownloadPlugin,
 ]
 
-Mirador.viewer(config, plugins)
+window.renderMirador = function (optionsFromHTML) {
+
+  // Merge the options from the HTML with the default config
+  const mergedConfig = {
+    ...config,
+    ...optionsFromHTML,
+  }
+
+  console.log('mergedConfig', mergedConfig.windows)
+
+  return Mirador.viewer(mergedConfig, plugins)
+}
+
+
