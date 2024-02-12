@@ -21,5 +21,5 @@ npm install
 
 
 ```sh
-npm run parcel
+npx parcel parcel/index.html
 ```
