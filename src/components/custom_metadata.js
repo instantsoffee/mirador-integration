@@ -15,6 +15,6 @@ export default function () {
     >
       <button onClick={handleButtonClick}>Test button</button>
     </Typography>
-    <LabelValueMetadata labelValuePairs={[{ label: 'Cat?', values: ['Yes!'] }]} />
+    <LabelValueMetadata labelValuePairs={[{ label: 'Custom metadata', values: ['via', 'plugin'] }]} />
   </>;
 }

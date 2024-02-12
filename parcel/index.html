@@ -16,18 +16,14 @@
         return urlParams.get('manifestId')
       }
 
-      const manifestId = getManifestIdFromUrl() || 'https://iiif.onb.ac.at/presentation/ABO/Z152225709/manifest'
+      const manifestId = getManifestIdFromUrl() || 'https://wellcomelibrary.org/iiif/b19956435/manifest'
 
       const mirador = renderMirador({
         id: "viewer",
         windows: [
           {
             imageToolsEnabled: true,
-            imageToolsOpen: false,
-            // manifestId: 'https://iiif.onb.ac.at/presentation/ABO/Z152225709/manifest',
-            // manifestId: 'https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb11369286/manifest',
-            // manifestId: 'https://wellcomelibrary.org/iiif/b19956435/manifest', // Suche + textoverlay (ALTO) - V2
-            // manifestId: 'https://iiif.io/api/cookbook/recipe/0068-newspaper/newspaper_issue_1-manifest.json'
+            imageToolsOpen: true,
             manifestId: manifestId
           }
         ]
