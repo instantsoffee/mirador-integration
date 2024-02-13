@@ -151,8 +151,6 @@ window.renderMirador = function (optionsFromHTML) {
     ...optionsFromHTML,
   }
 
-  console.log('mergedConfig', mergedConfig.windows)
-
   return Mirador.viewer(mergedConfig, plugins)
 }
 
